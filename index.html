@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="kalkulator">
+            <input type="text" class="inputan" name="" id="output" placeholder="0">
+            <button onclick="Clear()">C</button>
+            <button onclick="hapus()">HPS</button>
+            <button onclick="muncul('%')">% </button>
+            <button onclick="muncul('/')">/ </button>
+            <button onclick="muncul('7')">7 </button>
+            <button onclick="muncul('8')">8 </button>
+            <button onclick="muncul('9')">9 </button>
+            <button onclick="muncul('*')">* </button>
+            <button onclick="muncul('4')">4 </button>
+            <button onclick="muncul('5')">5 </button>
+            <button onclick="muncul('6')">6 </button>
+            <button onclick="muncul('-')">- </button>
+            <button onclick="muncul('1')">1 </button>
+            <button onclick="muncul('2')">2 </button>
+            <button onclick="muncul('3')">3 </button>
+            <button onclick="muncul('+')">+ </button>
+            <button onclick="muncul('.')">. </button>
+            <button onclick="muncul('0')">0 </button>
+            <button onclick="jumlah('=')" class="jumlah">=</button>
+        </div>
+    </div>
+    <script>
+        let outputScreen = document.getElementById("output");
+        function muncul(num){
+            outputScreen.value += num;
+        }
+        function jumlah(){
+            try{
+                outputScreen.value = eval(outputScreen.value);
+            }
+            catch(error){
+                alert("Gak bisa bli!")
+            }
+        }
+        function Clear(){
+            outputScreen.value = " ";
+        }
+        function hapus(){
+            outputScreen.value = outputScreen.value.slice(0,-1);
+        }
+    </script>
+</body>
+</html>
